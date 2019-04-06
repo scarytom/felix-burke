@@ -34,9 +34,13 @@ public class Main {
 
         final int startIdx = 3;
         final int finishIdx = 0;
+        //4 15 2 6 11 12 16 3 8 7 13 1  -- dads
+        //4 15 2 6 11 10 5 12 3 8 7 1   -- mine
+
         //4 15 10 12 5 11 6 2 7 8 3 1
         //4 15 5 11 6 12 3 8 7 2 10 1
         //4 15 2 5 6 11 8 7 3 16 10 1
+
         combinations(new int[] {1,2,4,5,6,7,9,10,11,12,14,15}, 10, 0, new int[10], (int[] route) -> {
             int distance = distances[startIdx][route[0]] + distances[route[9]][finishIdx] + calcDist(route, distances);
             if (distance == 60 && (route[0] == 9 || route[0] == 14) && (route[5] == 2 || route[6] == 2 || route[7] == 2)) {
